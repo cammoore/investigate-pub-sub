@@ -46,7 +46,7 @@ ListItem.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Item documents.
-  const subscription = Meteor.subscribe(Items.userPublicationName);
+  const subscription = Meteor.subscribeLite(Items.userPublicationName);
   return {
     Items: Items.collection.find({}).fetch(),
     ready: subscription.ready(),

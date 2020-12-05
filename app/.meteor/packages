@@ -25,6 +25,8 @@ react-meteor-data                # React higher-order component for reactively t
 # reactive-dict@1.3.0              # Object form of reactive variable.
 # tracker@1.2.0                    # Meteor's client-side reactive programming library
 
+maestroqadev:pub-sub-lite
+
 # Accounts
 accounts-password
 alanning:roles                   # support roles like 'admin'

@@ -5,7 +5,7 @@ import { Stuffs } from '../../api/stuff/Stuff';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
-Meteor.publish(Stuffs.userPublicationName, function () {
+Meteor.publishLite(Stuffs.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Stuffs.collection.find({ owner: username });
@@ -13,7 +13,7 @@ Meteor.publish(Stuffs.userPublicationName, function () {
   return this.ready();
 });
 
-Meteor.publish(Items.userPublicationName, function () {
+Meteor.publishLite(Items.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Items.collection.find({ owner: username });
@@ -23,14 +23,14 @@ Meteor.publish(Items.userPublicationName, function () {
 
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.
-Meteor.publish(Stuffs.adminPublicationName, function () {
+Meteor.publishLite(Stuffs.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Stuffs.collection.find();
   }
   return this.ready();
 });
 
-Meteor.publish(Items.adminPublicationName, function () {
+Meteor.publishLite(Items.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Items.collection.find();
   }
