@@ -9,5 +9,12 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+  "defaultItems": [
+    { "name": "Basket Item", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
+    { "name": "Bicycle Item", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
+    { "name": "Banana Item", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
+    { "name": "Boogie Board Item", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ]
+
 }
